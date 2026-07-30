@@ -1,8 +1,18 @@
 aid: meesho
 name: Meesho
-description: 'Meesho is a company surfaced as a portfolio company of prosus-ventures, softbank-vision-fund,
-  y-combinator and added to the API Evangelist network as a stub for enrichment. Sector: marketplace.
-  This profile is a lead awaiting the enrichment pipeline.'
+description: >-
+  Meesho is one of India's largest online marketplaces, pioneering low-cost
+  social commerce for Bharat (tier-2/3 towns and beyond). It connects lakhs of
+  small and mid-sized suppliers directly with hundreds of millions of value-
+  conscious buyers on a zero-commission model, spanning fashion, home, kitchen,
+  electronics accessories and general merchandise. Suppliers list catalog,
+  manage inventory, fulfil and ship orders, and reconcile returns/RTO through
+  the Meesho Supplier Panel (supplier.meesho.com) and, for integrators, a
+  partner-gated Supplier / Order-Management API (production host
+  merchant.meesho.com; test host merchant.meeshotest.in) authenticated with
+  Meesho-issued signed request headers rather than a public self-service
+  developer program. Meesho is backed by Prosus Ventures, SoftBank Vision Fund
+  and Y Combinator.
 url: https://raw.githubusercontent.com/api-evangelist/meesho/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -12,13 +22,52 @@ x-backed-by:
 - y-combinator
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
+image: https://www.meesho.com/assets/svgicons/meeshoLogo.svg
 tags:
 - Company
 - Marketplace
-apis: []
+- E-Commerce
+- Social Commerce
+- Retail
+- Marketplaces
+- India
+- Suppliers
+apis:
+- name: Meesho Supplier / Order-Management API
+  description: >-
+    Partner-gated API for onboarded Meesho suppliers and integration partners to
+    sync catalog and inventory, fetch and update orders, retrieve shipping
+    labels, and process returns/RTO. Credentials (client-id, secret-key) are
+    issued by Meesho during onboarding; requests are authenticated with signed
+    headers. No public self-service OpenAPI is published.
+  humanURL: https://www.postman.com/meesho
+  baseURL: https://merchant.meesho.com
+  tags:
+  - Marketplace
+  - Orders
+  - Inventory
+  - Catalog
+  - Fulfillment
+  properties:
+  - type: Authentication
+    url: authentication/meesho-authentication.yml
+  - type: Postman
+    url: https://www.postman.com/meesho
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -27,3 +76,32 @@ maintainers:
 common:
 - type: Website
   url: https://meesho.com
+- type: DeveloperPortal
+  url: https://supplier.meesho.com
+- type: SignUp
+  url: https://supplier.meesho.com/panel/v3/new/root/login
+- type: Support
+  url: https://help.meesho.com
+- type: HelpCenter
+  url: https://supplier.meesho.com/learning-hub
+- type: Blog
+  url: https://www.meesho.io/blog
+- type: GitHubOrganization
+  url: https://github.com/meesho
+- type: Postman
+  url: https://www.postman.com/meesho
+- type: PrivacyPolicy
+  url: https://www.meesho.com/legal/privacy
+- type: TermsOfService
+  url: https://www.meesho.com/legal/terms-conditions
+- type: Careers
+  url: https://www.meesho.io
+- type: Authentication
+  url: authentication/meesho-authentication.yml
+- type: DomainSecurity
+  url: security/meesho-domain-security.yml
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 2
+  pass: local-v1
