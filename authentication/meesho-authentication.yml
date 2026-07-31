@@ -1,0 +1,36 @@
+generated: '2026-07-20'
+method: searched
+source: https://documentation.fynd.com/konnect/channels/marketplaces-webstores/meesho
+docs: https://www.postman.com/meesho
+note: >-
+  Meesho's Supplier / Order-Management API is a partner-gated integration. There
+  is no public self-service OpenAPI; credentials (client-id, secret-key) are
+  issued by Meesho during supplier/partner onboarding. Authentication is
+  performed with per-request signed headers rather than OAuth. Details below are
+  captured from the published Meesho partner integration and third-party channel
+  documentation, not from a first-party OpenAPI securityScheme.
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+  oauth2_flows: []
+schemes:
+- name: MeeshoSignedHeaders
+  type: apiKey
+  in: header
+  description: >-
+    Per-request credential + signature headers supplied by Meesho to onboarded
+    suppliers/partners. Reported headers include client/merchant identifier, a
+    security/secret value, a request timestamp, and a supplier_identifier.
+  headers:
+  - merchant
+  - security
+  - timestamp
+  - supplier_identifier
+  credentials:
+  - client-id
+  - secret-key
+  onboarding: >-
+    Credentials requested from Meesho during partner onboarding (integration
+    contact meesholink-integration@meesho.com per channel docs).
