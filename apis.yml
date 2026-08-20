@@ -59,6 +59,12 @@ apis:
   baseURL: https://merchant.meesho.com
   tags:
   - Marketplace
+  - Order
+  - Inventory
+  - Catalog
+  - Fulfillment
+  tags_raw:
+  - Marketplace
   - Orders
   - Inventory
   - Catalog
